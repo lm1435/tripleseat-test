@@ -49,7 +49,8 @@ const Event = ({
   
   let EventName = {
     color: colorObj[status] || 'black',
-    textTransform: 'capitalize'
+    textTransform: 'capitalize',
+    fontWeight: '600'
   }
 
   let statusStyles = {
@@ -60,7 +61,7 @@ const Event = ({
 
   const Wrapper = styled.div`
     border: 1px solid grey;
-    margin: 1em auto;
+    margin: 1em 0;
     padding: 1em;
   `
 
