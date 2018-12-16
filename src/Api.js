@@ -16,7 +16,7 @@ const formatTime = (date) => {
   let d = getDate(date);
   let hours = d.getHours();
   let minutes = (d.getMinutes() < 10 ? "0" : "") + d.getMinutes();
-  let startTime = hours == 12 ? hours + ':' + minutes + " PM" : hours < 12 ? hours + ':' + minutes + " AM" : hours-12 + ':' + minutes + " PM";
+  let startTime = hours === 12 ? hours + ':' + minutes + " PM" : hours < 12 ? hours + ':' + minutes + " AM" : hours-12 + ':' + minutes + " PM";
   return startTime;
 }
 

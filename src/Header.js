@@ -17,17 +17,10 @@ const Input = styled.input`
   border: 2px solid #e87e81
 `
 
-const headerImg = {
-  display: "flex",
-  alignItems: "center"
-}
-
 const header = {
-  display: "flex",
-  justifyContent: "flex-end",
-  alignItems: "center",
   color: "#e87e81",
-  fontWeight: "bold"
+  fontWeight: "bold",
+  margin: "10px 0"
 }
 
 const Header = ({ children, searchTerm, onSearchChange }) => {
@@ -35,7 +28,7 @@ const Header = ({ children, searchTerm, onSearchChange }) => {
     <Wrapper>
       <Container>
         <Row>
-          <Col xs="12" md="6" style={headerImg}>
+          <Col xs="12" md="6" style={header}>
             <img src="https://www.tripleseat.com/wp-content/themes/tripleseat_wordpress/images/logo.png" alt="tripleseat logo"/>
           </Col>
           <Col xs="12" md="6" style={header}>
