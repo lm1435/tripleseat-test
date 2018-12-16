@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { Col, Row, Container } from 'reactstrap';
 
 const Wrapper = styled.div`
   margin: 1em auto;
@@ -9,14 +10,47 @@ const Wrapper = styled.div`
 const Paragraph = styled.p`
   color: #9ad6da;
   font-size: 2em;
+  margin: auto;
 `
 
+const Input = styled.input`
+  border: 2px solid #e87e81
+`
 
-const Header = ({children}) => {
+const headerImg = {
+  display: "flex",
+  alignItems: "center"
+}
+
+const header = {
+  display: "flex",
+  justifyContent: "flex-end",
+  alignItems: "center",
+  color: "#e87e81",
+  fontWeight: "bold"
+}
+
+const Header = ({ children, searchTerm, onSearchChange }) => {
   return (
     <Wrapper>
-      <img src="https://www.tripleseat.com/wp-content/themes/tripleseat_wordpress/images/logo.png" alt="tripleseat logo"/>
-      <Paragraph>{children}</Paragraph>
+      <Container>
+        <Row>
+          <Col xs="12" md="6" style={headerImg}>
+            <img src="https://www.tripleseat.com/wp-content/themes/tripleseat_wordpress/images/logo.png" alt="tripleseat logo"/>
+          </Col>
+          <Col xs="12" md="6" style={header}>
+            <form>
+              <span>Search: </span>
+              <Input
+                type="text"
+                value={searchTerm}
+                onChange={onSearchChange}
+              />
+            </form>
+          </Col>
+          <Paragraph>{children}</Paragraph>
+        </Row>
+      </Container>
     </Wrapper>
   );
 }
